@@ -91,8 +91,8 @@ const searchApartments = async () => {
       if (response.status === 200) {
         const html = response.data;
         const $ = cheerio.load(html);
-
         // Use the class selector to locate apartment price elements
+        console.log(html)
         $('p.sc-iBkjds.OiFQE.sc-ftvSup.etNEqI.CozyTypography span').each((index, element) => {
           const price = $(element).text();
           apartmentPrices.push(price);
